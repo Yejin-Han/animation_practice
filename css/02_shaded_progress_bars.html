@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaded Progress Bars</title>
+    <link rel="stylesheet" href="../assets/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="../assets/scss/css_02.css"> -->
+    <link rel="stylesheet" href="../assets/css/css_02.css">
+</head>
+<body>
+    <div class="container">
+        <header class="codrops-header">
+			<div class="codrops-links">
+				<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/ElasticProgress/" title="Previous Demo"><span>Previous Demo</span></a>
+				<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=25049" title="Back to the article"><span>Back to the Codrops article</span></a>
+			</div>
+			<h1>Shaded Progress Bars <span>A CSS/Sass Exercise</span></h1>
+		</header>
+        <section class="content">
+            <article class="flexy-grid">
+                <h3>Striped bars</h3>
+                <input type="checkbox" id="bar-1">
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors navy ruler" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="bar-0_0">
+                                <div class="tooltip white"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors orange ruler-2" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip white"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors cyan ruler-3" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip white"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="bar-1" class="value-label">[ aria-valuenow = '90%' ]</label>
+            </article>
+            <article class="flexy-grid">
+                <h3>Heat bars</h3>
+                <input type="checkbox" id="bar-2">
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors red heat-gradient" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip heat-gradient-tooltip"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors orange heat-gradient" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip heat-gradient-tooltip"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors cyan heat-gradient" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip heat-gradient-tooltip"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="bar-2" class="value-label">[ aria-valuenow = '90%' ]</label>
+            </article>
+            <article class="flexy-grid">
+                <h3>Dotted bar</h3>
+                <input type="checkbox" id="bar-0">
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors dark dots-pattern" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="tooltip"></div>
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="bar-0" class="value-label">[ aria-valuenow = '90%' ]</label>
+            </article>
+            <article class="flexy-grid">
+                <h3>Hover bar</h3>
+                <input type="checkbox" id="bar-3">
+                <div class="flexy-column">
+                    <div class="progress-factor flexy-item">
+                        <div class="progress-bar">
+                            <div class="bar has-rotation has-colors yellow move" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                <div class="bar-face face-position roof percentage"></div>
+                                <div class="bar-face face-position back percentage"></div>
+                                <div class="bar-face face-position floor percentage volume-lights"></div>
+                                <div class="bar-face face-position left"></div>
+                                <div class="bar-face face-position right"></div>
+                                <div class="bar-face face-position front percentage volume-lights shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="bar-3" class="value-label">[ aria-valuenow = '90%' ]</label>
+            </article>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</body>
+</html>
+
+<!-- 
+- aria-valuenow 속성의 이용
+- linear-gradient, radial-gradient 등을 이용한 그라디언트 패턴
+-->

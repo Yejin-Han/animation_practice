@@ -1,0 +1,2634 @@
+@charset "UTF-8";
+/***************** settings *****************/
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "codropsicons";
+  src: url("../fonts/codropsicons/codropsicons.eot");
+  src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+}
+/***************** normalize *****************/
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox], input[type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/***************** contents *****************/
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  font-family: Avenir, "Helvetica Neue", "Lato", "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #e5e8ef;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #df7932;
+}
+
+a:hover, a:focus {
+  color: #333;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Header */
+.codrops-header {
+  padding: 2em 1em 4em;
+  text-align: center;
+}
+.codrops-header h1 {
+  margin: 0.5em 0 0;
+  letter-spacing: -1px;
+  font-size: 3em;
+  line-height: 1;
+}
+.codrops-header h1 span {
+  display: block;
+  padding: 2em 0 0;
+  color: #bbbfcb;
+  font-size: 0.285em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 50em) {
+  .codrops-header {
+    padding: 3em 10% 4em;
+  }
+}
+@media screen and (max-width: 40em) {
+  .codrops-header h1 {
+    font-size: 2.8em;
+  }
+}
+/* Top Navigation */
+.codrops-links {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+}
+.codrops-links:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotate3d(0, 0, 1, 22.5deg);
+          transform: rotate3d(0, 0, 1, 22.5deg); /* 가운데 / 모양 */
+}
+
+.codrops-icon {
+  display: inline-block;
+  width: 1.5em;
+  margin: 0.5em;
+  padding: 0em 0;
+}
+.codrops-icon span {
+  display: none;
+}
+.codrops-icon:before {
+  margin: 0 5px;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: "codropsicons";
+  line-height: 1;
+  -webkit-font-smoothing: antialised;
+}
+.codrops-icon.codrops-icon--drop:before {
+  content: "\e001";
+}
+.codrops-icon.codrops-icon--prev:before {
+  content: "\e004";
+}
+
+/***************** component *****************/
+.progress-factor {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  padding: 1em 0.2em 0;
+  font-size: 5em;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 1em;
+  font-size: 1em;
+  text-align: center;
+  -webkit-perspective: 12em;
+          perspective: 12em;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+}
+
+.bar {
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 1em;
+  font-size: 1em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.bar.has-rotation {
+  -webkit-transform: rotateX(60deg);
+          transform: rotateX(60deg);
+}
+
+.bar-face {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 64, 105, 0.3);
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+.bar-face.face-position {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+.bar-face.roof {
+  -webkit-transform: translateZ(1em);
+          transform: translateZ(1em);
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+.bar-face.back {
+  -webkit-transform: rotateX(-90deg) translateZ(-1em);
+          transform: rotateX(-90deg) translateZ(-1em);
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.bar-face.left {
+  width: 1em;
+  -webkit-transform: rotateX(-90deg) rotateY(-90deg) translateX(-0.5em) translateZ(0.5em);
+          transform: rotateX(-90deg) rotateY(-90deg) translateX(-0.5em) translateZ(0.5em);
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.bar-face.right {
+  width: 1em;
+  left: auto;
+  right: 0;
+  -webkit-transform: rotateX(-90deg) rotateY(90deg) translateX(0.5em) translateZ(0.5em);
+          transform: rotateX(-90deg) rotateY(90deg) translateX(0.5em) translateZ(0.5em);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.bar-face.front {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+.bar-face.percentage:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 4em;
+  font-size: 0.25em;
+  color: rgba(68, 68, 68, 0.8);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.bar-face, .bar[aria-valuenow="0"] .right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bar[aria-valuenow="0"] .right {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.bar .floor.volume-lights {
+  -webkit-box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+          box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+
+.dots-pattern .percentage:before {
+  background: radial-gradient(rgba(254, 254, 254, 0.5) 10%, rgba(0, 0, 0, 0) 5%) 0 0, radial-gradient(rgba(254, 254, 254, 0.5) 10%, rgba(0, 0, 0, 0) 5%) 0.5em 0.5em;
+  background-size: 1em 1em;
+}
+
+.navy { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.navy .left, .navy[aria-valuenow="100"] .right {
+  background-color: rgba(10, 64, 105, 0.2);
+}
+.navy .percentage:before {
+  background-color: rgba(10, 64, 105, 0.5);
+}
+.navy .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0.25);
+          box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0.25);
+}
+.navy:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.navy:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.navy:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0);
+          box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0);
+}
+
+.orange { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.orange .left, .orange[aria-valuenow="100"] .right {
+  background-color: rgba(255, 105, 0, 0.2);
+}
+.orange .percentage:before {
+  background-color: rgba(255, 105, 0, 0.5);
+}
+.orange .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0.25);
+          box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0.25);
+}
+.orange:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.orange:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.orange:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0);
+          box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0);
+}
+
+.cyan { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.cyan .left, .cyan[aria-valuenow="100"] .right {
+  background-color: rgba(87, 202, 244, 0.2);
+}
+.cyan .percentage:before {
+  background-color: rgba(87, 202, 244, 0.5);
+}
+.cyan .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0.25);
+          box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0.25);
+}
+.cyan:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.cyan:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.cyan:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0);
+          box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0);
+}
+
+.red { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.red .left, .red[aria-valuenow="100"] .right {
+  background-color: rgba(236, 0, 113, 0.2);
+}
+.red .percentage:before {
+  background-color: rgba(236, 0, 113, 0.5);
+}
+.red .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0.25);
+          box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0.25);
+}
+.red:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.red:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.red:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0);
+          box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0);
+}
+
+.dark { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.dark .left, .dark[aria-valuenow="100"] .right {
+  background-color: rgba(68, 68, 68, 0.2);
+}
+.dark .percentage:before {
+  background-color: rgba(68, 68, 68, 0.5);
+}
+.dark .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0.25);
+          box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0.25);
+}
+.dark:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.dark:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.dark:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0);
+          box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0);
+}
+
+.yellow { /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */ }
+.yellow .left, .yellow[aria-valuenow="100"] .right {
+  background-color: rgba(241, 196, 15, 0.2);
+}
+.yellow .percentage:before {
+  background-color: rgba(241, 196, 15, 0.5);
+}
+.yellow .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0.25);
+          box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0.25);
+}
+.yellow:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+.yellow:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+.yellow:not(.has-colors) .volume-lights.shine:before {
+  -webkit-box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0);
+          box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0);
+}
+
+[aria-valuenow="1"] .percentage:before {
+  width: 1%;
+}
+
+[aria-valuenow="2"] .percentage:before {
+  width: 2%;
+}
+
+[aria-valuenow="3"] .percentage:before {
+  width: 3%;
+}
+
+[aria-valuenow="4"] .percentage:before {
+  width: 4%;
+}
+
+[aria-valuenow="5"] .percentage:before {
+  width: 5%;
+}
+
+[aria-valuenow="6"] .percentage:before {
+  width: 6%;
+}
+
+[aria-valuenow="7"] .percentage:before {
+  width: 7%;
+}
+
+[aria-valuenow="8"] .percentage:before {
+  width: 8%;
+}
+
+[aria-valuenow="9"] .percentage:before {
+  width: 9%;
+}
+
+[aria-valuenow="10"] .percentage:before {
+  width: 10%;
+}
+
+[aria-valuenow="11"] .percentage:before {
+  width: 11%;
+}
+
+[aria-valuenow="12"] .percentage:before {
+  width: 12%;
+}
+
+[aria-valuenow="13"] .percentage:before {
+  width: 13%;
+}
+
+[aria-valuenow="14"] .percentage:before {
+  width: 14%;
+}
+
+[aria-valuenow="15"] .percentage:before {
+  width: 15%;
+}
+
+[aria-valuenow="16"] .percentage:before {
+  width: 16%;
+}
+
+[aria-valuenow="17"] .percentage:before {
+  width: 17%;
+}
+
+[aria-valuenow="18"] .percentage:before {
+  width: 18%;
+}
+
+[aria-valuenow="19"] .percentage:before {
+  width: 19%;
+}
+
+[aria-valuenow="20"] .percentage:before {
+  width: 20%;
+}
+
+[aria-valuenow="21"] .percentage:before {
+  width: 21%;
+}
+
+[aria-valuenow="22"] .percentage:before {
+  width: 22%;
+}
+
+[aria-valuenow="23"] .percentage:before {
+  width: 23%;
+}
+
+[aria-valuenow="24"] .percentage:before {
+  width: 24%;
+}
+
+[aria-valuenow="25"] .percentage:before {
+  width: 25%;
+}
+
+[aria-valuenow="26"] .percentage:before {
+  width: 26%;
+}
+
+[aria-valuenow="27"] .percentage:before {
+  width: 27%;
+}
+
+[aria-valuenow="28"] .percentage:before {
+  width: 28%;
+}
+
+[aria-valuenow="29"] .percentage:before {
+  width: 29%;
+}
+
+[aria-valuenow="30"] .percentage:before {
+  width: 30%;
+}
+
+[aria-valuenow="31"] .percentage:before {
+  width: 31%;
+}
+
+[aria-valuenow="32"] .percentage:before {
+  width: 32%;
+}
+
+[aria-valuenow="33"] .percentage:before {
+  width: 33%;
+}
+
+[aria-valuenow="34"] .percentage:before {
+  width: 34%;
+}
+
+[aria-valuenow="35"] .percentage:before {
+  width: 35%;
+}
+
+[aria-valuenow="36"] .percentage:before {
+  width: 36%;
+}
+
+[aria-valuenow="37"] .percentage:before {
+  width: 37%;
+}
+
+[aria-valuenow="38"] .percentage:before {
+  width: 38%;
+}
+
+[aria-valuenow="39"] .percentage:before {
+  width: 39%;
+}
+
+[aria-valuenow="40"] .percentage:before {
+  width: 40%;
+}
+
+[aria-valuenow="41"] .percentage:before {
+  width: 41%;
+}
+
+[aria-valuenow="42"] .percentage:before {
+  width: 42%;
+}
+
+[aria-valuenow="43"] .percentage:before {
+  width: 43%;
+}
+
+[aria-valuenow="44"] .percentage:before {
+  width: 44%;
+}
+
+[aria-valuenow="45"] .percentage:before {
+  width: 45%;
+}
+
+[aria-valuenow="46"] .percentage:before {
+  width: 46%;
+}
+
+[aria-valuenow="47"] .percentage:before {
+  width: 47%;
+}
+
+[aria-valuenow="48"] .percentage:before {
+  width: 48%;
+}
+
+[aria-valuenow="49"] .percentage:before {
+  width: 49%;
+}
+
+[aria-valuenow="50"] .percentage:before {
+  width: 50%;
+}
+
+[aria-valuenow="51"] .percentage:before {
+  width: 51%;
+}
+
+[aria-valuenow="52"] .percentage:before {
+  width: 52%;
+}
+
+[aria-valuenow="53"] .percentage:before {
+  width: 53%;
+}
+
+[aria-valuenow="54"] .percentage:before {
+  width: 54%;
+}
+
+[aria-valuenow="55"] .percentage:before {
+  width: 55%;
+}
+
+[aria-valuenow="56"] .percentage:before {
+  width: 56%;
+}
+
+[aria-valuenow="57"] .percentage:before {
+  width: 57%;
+}
+
+[aria-valuenow="58"] .percentage:before {
+  width: 58%;
+}
+
+[aria-valuenow="59"] .percentage:before {
+  width: 59%;
+}
+
+[aria-valuenow="60"] .percentage:before {
+  width: 60%;
+}
+
+[aria-valuenow="61"] .percentage:before {
+  width: 61%;
+}
+
+[aria-valuenow="62"] .percentage:before {
+  width: 62%;
+}
+
+[aria-valuenow="63"] .percentage:before {
+  width: 63%;
+}
+
+[aria-valuenow="64"] .percentage:before {
+  width: 64%;
+}
+
+[aria-valuenow="65"] .percentage:before {
+  width: 65%;
+}
+
+[aria-valuenow="66"] .percentage:before {
+  width: 66%;
+}
+
+[aria-valuenow="67"] .percentage:before {
+  width: 67%;
+}
+
+[aria-valuenow="68"] .percentage:before {
+  width: 68%;
+}
+
+[aria-valuenow="69"] .percentage:before {
+  width: 69%;
+}
+
+[aria-valuenow="70"] .percentage:before {
+  width: 70%;
+}
+
+[aria-valuenow="71"] .percentage:before {
+  width: 71%;
+}
+
+[aria-valuenow="72"] .percentage:before {
+  width: 72%;
+}
+
+[aria-valuenow="73"] .percentage:before {
+  width: 73%;
+}
+
+[aria-valuenow="74"] .percentage:before {
+  width: 74%;
+}
+
+[aria-valuenow="75"] .percentage:before {
+  width: 75%;
+}
+
+[aria-valuenow="76"] .percentage:before {
+  width: 76%;
+}
+
+[aria-valuenow="77"] .percentage:before {
+  width: 77%;
+}
+
+[aria-valuenow="78"] .percentage:before {
+  width: 78%;
+}
+
+[aria-valuenow="79"] .percentage:before {
+  width: 79%;
+}
+
+[aria-valuenow="80"] .percentage:before {
+  width: 80%;
+}
+
+[aria-valuenow="81"] .percentage:before {
+  width: 81%;
+}
+
+[aria-valuenow="82"] .percentage:before {
+  width: 82%;
+}
+
+[aria-valuenow="83"] .percentage:before {
+  width: 83%;
+}
+
+[aria-valuenow="84"] .percentage:before {
+  width: 84%;
+}
+
+[aria-valuenow="85"] .percentage:before {
+  width: 85%;
+}
+
+[aria-valuenow="86"] .percentage:before {
+  width: 86%;
+}
+
+[aria-valuenow="87"] .percentage:before {
+  width: 87%;
+}
+
+[aria-valuenow="88"] .percentage:before {
+  width: 88%;
+}
+
+[aria-valuenow="89"] .percentage:before {
+  width: 89%;
+}
+
+[aria-valuenow="90"] .percentage:before {
+  width: 90%;
+}
+
+[aria-valuenow="91"] .percentage:before {
+  width: 91%;
+}
+
+[aria-valuenow="92"] .percentage:before {
+  width: 92%;
+}
+
+[aria-valuenow="93"] .percentage:before {
+  width: 93%;
+}
+
+[aria-valuenow="94"] .percentage:before {
+  width: 94%;
+}
+
+[aria-valuenow="95"] .percentage:before {
+  width: 95%;
+}
+
+[aria-valuenow="96"] .percentage:before {
+  width: 96%;
+}
+
+[aria-valuenow="97"] .percentage:before {
+  width: 97%;
+}
+
+[aria-valuenow="98"] .percentage:before {
+  width: 98%;
+}
+
+[aria-valuenow="99"] .percentage:before {
+  width: 99%;
+}
+
+[aria-valuenow="100"] .percentage:before {
+  width: 100%;
+}
+
+/***************** custom bars *****************/
+.flexy-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4em 0;
+}
+.flexy-grid .flexy-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 3em;
+}
+.flexy-grid:nth-of-type(odd) {
+  background-color: #d8dbe4;
+}
+.flexy-grid input[type=checkbox] {
+  display: none;
+}
+
+.flexy-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.value-label {
+  position: relative;
+  display: inline-block;
+  margin: 4em 0 2.5em;
+  padding: 1em;
+  background-color: rgba(255, 105, 0, 0.6);
+  color: #fefefe;
+  border: 1px solid rgba(153, 153, 153, 0.2);
+  border-radius: 0.25em;
+  -webkit-box-shadow: 0 0.1em 0.25em rgba(153, 153, 153, 0.6), inset 0 0.15em 0.05em rgba(254, 254, 254, 0.2);
+          box-shadow: 0 0.1em 0.25em rgba(153, 153, 153, 0.6), inset 0 0.15em 0.05em rgba(254, 254, 254, 0.2);
+}
+.value-label:hover {
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ .value-label {
+  background: #444;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input[type=checkbox]:checked ~ .flexy-column .bar[aria-valuenow] .percentage:before {
+  width: 90%;
+}
+input[type=checkbox]:checked ~ .flexy-column .bar[aria-valuenow] .tooltip {
+  left: 90%;
+}
+input[type=checkbox]:checked ~ .flexy-column .bar[aria-valuenow] .tooltip:before {
+  content: "90%";
+}
+input[type=checkbox]:checked ~ .flexy-column .bar[aria-valuenow].heat-gradient .tooltip {
+  background-color: #ec0071;
+  border-bottom: 1px solid #d30065;
+}
+input[type=checkbox]:checked ~ .flexy-column .bar[aria-valuenow].heat-gradient .tooltip:after {
+  border-bottom-color: #ec0071;
+}
+
+.bar.ruler .percentage:before {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, rgba(0, 0, 0, 0) 1px);
+  background-size: 1em 1em, 1.6em 2em, 0.8em 2em;
+}
+
+.bar.ruler-2 .percentage:before {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.14) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.26) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.34) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.38) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0.8em, rgba(0, 0, 0, 0) 1px);
+  background-size: 16em 1em;
+  background-position: 1.6em 0, 3.2em 0, 4.8em 0, 6.4em 0, 8em 0, 9.6em 0, 11.2em 0, 12.8em 0, 14.4em 0;
+}
+
+.bar.ruler-3 .percentage:before {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.8em, rgba(0, 0, 0, 0) 1px);
+  background-size: 1.6em 2em;
+}
+
+.bar.heat-gradient .left {
+  background-color: rgba(241, 196, 15, 0.8);
+}
+.bar.heat-gradient .percentage:before {
+  background-color: rgba(241, 196, 15, 0.8);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(241, 196, 15, 0.8)), to(rgba(236, 0, 113, 0.6)));
+  background: linear-gradient(to right, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+  background-size: 16em;
+}
+.bar.heat-gradient .volume-lights.shine:before {
+  -webkit-box-shadow: -2em 1.6em 3em -1em rgba(241, 196, 15, 0.3), 2em 1.6em 3em -1em rgba(236, 0, 113, 0.6);
+          box-shadow: -2em 1.6em 3em -1em rgba(241, 196, 15, 0.3), 2em 1.6em 3em -1em rgba(236, 0, 113, 0.6);
+}
+.bar.heat-gradient[aria-valuenow="100"] .right {
+  background-color: rgba(236, 0, 113, 0.6);
+}
+
+.bar.move .bar-face.floor {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.bar.move:hover {
+  -webkit-transform: rotateX(60deg) translateZ(0.1em);
+          transform: rotateX(60deg) translateZ(0.1em);
+}
+.bar.move:hover .bar-face.floor.volume-lights {
+  -webkit-box-shadow: 0 -0.1em 1em rgba(0, 0, 0, 0.15), 0 0.35em 0.2em -8px rgba(0, 0, 0, 0.15), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+          box-shadow: 0 -0.1em 1em rgba(0, 0, 0, 0.15), 0 0.35em 0.2em -8px rgba(0, 0, 0, 0.15), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  background-color: #ff6db3;
+  color: #fefefe;
+  margin: 1.85em 0 0 -0.5em;
+  font-weight: bold;
+  font-size: 0.65em;
+  border-bottom: 1px solid #ff53a5;
+  -webkit-box-shadow: 0 0.05em 0.1em -0.02em rgba(0, 0, 0, 0.4), 0 0.1em 0.6em rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.05em 0.1em -0.02em rgba(0, 0, 0, 0.4), 0 0.1em 0.6em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.tooltip:after, .tooltip:before {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 0.25em;
+}
+.tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-bottom-color: #ff6db3;
+  border-top-width: 0;
+  margin: -0.75em 0 0 1em;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.tooltip:before {
+  height: 100%;
+  text-align: center;
+}
+.tooltip.white {
+  background-color: #fefefe;
+  border-bottom: 1px solid #e5e5e5;
+  color: #444;
+  -webkit-box-shadow: 0 0.08em 0.1em 0em rgba(0, 0, 0, 0.2), 0 0.1em 1.6em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.08em 0.1em 0em rgba(0, 0, 0, 0.2), 0 0.1em 1.6em rgba(0, 0, 0, 0.2);
+}
+.tooltip.white:after {
+  border-bottom-color: #fefefe;
+}
+
+.bar[aria-valuenow="1"] .tooltip {
+  left: 1%;
+}
+.bar[aria-valuenow="1"] .tooltip:before {
+  content: "1%";
+}
+.bar[aria-valuenow="1"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1c210;
+  border-bottom: 1px solid #dbb00d;
+}
+.bar[aria-valuenow="1"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1c210;
+}
+
+.bar[aria-valuenow="2"] .tooltip {
+  left: 2%;
+}
+.bar[aria-valuenow="2"] .tooltip:before {
+  content: "2%";
+}
+.bar[aria-valuenow="2"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1c011;
+  border-bottom: 1px solid #dcae0d;
+}
+.bar[aria-valuenow="2"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1c011;
+}
+
+.bar[aria-valuenow="3"] .tooltip {
+  left: 3%;
+}
+.bar[aria-valuenow="3"] .tooltip:before {
+  content: "3%";
+}
+.bar[aria-valuenow="3"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1be12;
+  border-bottom: 1px solid #dcad0d;
+}
+.bar[aria-valuenow="3"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1be12;
+}
+
+.bar[aria-valuenow="4"] .tooltip {
+  left: 4%;
+}
+.bar[aria-valuenow="4"] .tooltip:before {
+  content: "4%";
+}
+.bar[aria-valuenow="4"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1bc13;
+  border-bottom: 1px solid #ddac0d;
+}
+.bar[aria-valuenow="4"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1bc13;
+}
+
+.bar[aria-valuenow="5"] .tooltip {
+  left: 5%;
+}
+.bar[aria-valuenow="5"] .tooltip:before {
+  content: "5%";
+}
+.bar[aria-valuenow="5"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1ba14;
+  border-bottom: 1px solid #deaa0d;
+}
+.bar[aria-valuenow="5"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1ba14;
+}
+
+.bar[aria-valuenow="6"] .tooltip {
+  left: 6%;
+}
+.bar[aria-valuenow="6"] .tooltip:before {
+  content: "6%";
+}
+.bar[aria-valuenow="6"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1b815;
+  border-bottom: 1px solid #dfa90d;
+}
+.bar[aria-valuenow="6"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1b815;
+}
+
+.bar[aria-valuenow="7"] .tooltip {
+  left: 7%;
+}
+.bar[aria-valuenow="7"] .tooltip:before {
+  content: "7%";
+}
+.bar[aria-valuenow="7"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1b616;
+  border-bottom: 1px solid #e0a70d;
+}
+.bar[aria-valuenow="7"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1b616;
+}
+
+.bar[aria-valuenow="8"] .tooltip {
+  left: 8%;
+}
+.bar[aria-valuenow="8"] .tooltip:before {
+  content: "8%";
+}
+.bar[aria-valuenow="8"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1b417;
+  border-bottom: 1px solid #e1a60e;
+}
+.bar[aria-valuenow="8"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1b417;
+}
+
+.bar[aria-valuenow="9"] .tooltip {
+  left: 9%;
+}
+.bar[aria-valuenow="9"] .tooltip:before {
+  content: "9%";
+}
+.bar[aria-valuenow="9"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1b218;
+  border-bottom: 1px solid #e2a40e;
+}
+.bar[aria-valuenow="9"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1b218;
+}
+
+.bar[aria-valuenow="10"] .tooltip {
+  left: 10%;
+}
+.bar[aria-valuenow="10"] .tooltip:before {
+  content: "10%";
+}
+.bar[aria-valuenow="10"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f1b019;
+  border-bottom: 1px solid #e3a30e;
+}
+.bar[aria-valuenow="10"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f1b019;
+}
+
+.bar[aria-valuenow="11"] .tooltip {
+  left: 11%;
+}
+.bar[aria-valuenow="11"] .tooltip:before {
+  content: "11%";
+}
+.bar[aria-valuenow="11"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0ae1a;
+  border-bottom: 1px solid #e2a10f;
+}
+.bar[aria-valuenow="11"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0ae1a;
+}
+
+.bar[aria-valuenow="12"] .tooltip {
+  left: 12%;
+}
+.bar[aria-valuenow="12"] .tooltip:before {
+  content: "12%";
+}
+.bar[aria-valuenow="12"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0ac1b;
+  border-bottom: 1px solid #e39f0f;
+}
+.bar[aria-valuenow="12"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0ac1b;
+}
+
+.bar[aria-valuenow="13"] .tooltip {
+  left: 13%;
+}
+.bar[aria-valuenow="13"] .tooltip:before {
+  content: "13%";
+}
+.bar[aria-valuenow="13"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0ab1c;
+  border-bottom: 1px solid #e39e0f;
+}
+.bar[aria-valuenow="13"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0ab1c;
+}
+
+.bar[aria-valuenow="14"] .tooltip {
+  left: 14%;
+}
+.bar[aria-valuenow="14"] .tooltip:before {
+  content: "14%";
+}
+.bar[aria-valuenow="14"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0a91d;
+  border-bottom: 1px solid #e49d0f;
+}
+.bar[aria-valuenow="14"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0a91d;
+}
+
+.bar[aria-valuenow="15"] .tooltip {
+  left: 15%;
+}
+.bar[aria-valuenow="15"] .tooltip:before {
+  content: "15%";
+}
+.bar[aria-valuenow="15"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0a71e;
+  border-bottom: 1px solid #e59b0f;
+}
+.bar[aria-valuenow="15"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0a71e;
+}
+
+.bar[aria-valuenow="16"] .tooltip {
+  left: 16%;
+}
+.bar[aria-valuenow="16"] .tooltip:before {
+  content: "16%";
+}
+.bar[aria-valuenow="16"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0a51f;
+  border-bottom: 1px solid #e6990f;
+}
+.bar[aria-valuenow="16"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0a51f;
+}
+
+.bar[aria-valuenow="17"] .tooltip {
+  left: 17%;
+}
+.bar[aria-valuenow="17"] .tooltip:before {
+  content: "17%";
+}
+.bar[aria-valuenow="17"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0a320;
+  border-bottom: 1px solid #e79710;
+}
+.bar[aria-valuenow="17"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0a320;
+}
+
+.bar[aria-valuenow="18"] .tooltip {
+  left: 18%;
+}
+.bar[aria-valuenow="18"] .tooltip:before {
+  content: "18%";
+}
+.bar[aria-valuenow="18"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0a121;
+  border-bottom: 1px solid #e89510;
+}
+.bar[aria-valuenow="18"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0a121;
+}
+
+.bar[aria-valuenow="19"] .tooltip {
+  left: 19%;
+}
+.bar[aria-valuenow="19"] .tooltip:before {
+  content: "19%";
+}
+.bar[aria-valuenow="19"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09f22;
+  border-bottom: 1px solid #e99310;
+}
+.bar[aria-valuenow="19"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09f22;
+}
+
+.bar[aria-valuenow="20"] .tooltip {
+  left: 20%;
+}
+.bar[aria-valuenow="20"] .tooltip:before {
+  content: "20%";
+}
+.bar[aria-valuenow="20"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09d23;
+  border-bottom: 1px solid #ea9110;
+}
+.bar[aria-valuenow="20"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09d23;
+}
+
+.bar[aria-valuenow="21"] .tooltip {
+  left: 21%;
+}
+.bar[aria-valuenow="21"] .tooltip:before {
+  content: "21%";
+}
+.bar[aria-valuenow="21"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09b24;
+  border-bottom: 1px solid #ea8f10;
+}
+.bar[aria-valuenow="21"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09b24;
+}
+
+.bar[aria-valuenow="22"] .tooltip {
+  left: 22%;
+}
+.bar[aria-valuenow="22"] .tooltip:before {
+  content: "22%";
+}
+.bar[aria-valuenow="22"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09925;
+  border-bottom: 1px solid #eb8d10;
+}
+.bar[aria-valuenow="22"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09925;
+}
+
+.bar[aria-valuenow="23"] .tooltip {
+  left: 23%;
+}
+.bar[aria-valuenow="23"] .tooltip:before {
+  content: "23%";
+}
+.bar[aria-valuenow="23"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09726;
+  border-bottom: 1px solid #ec8b10;
+}
+.bar[aria-valuenow="23"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09726;
+}
+
+.bar[aria-valuenow="24"] .tooltip {
+  left: 24%;
+}
+.bar[aria-valuenow="24"] .tooltip:before {
+  content: "24%";
+}
+.bar[aria-valuenow="24"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09527;
+  border-bottom: 1px solid #ed8910;
+}
+.bar[aria-valuenow="24"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09527;
+}
+
+.bar[aria-valuenow="25"] .tooltip {
+  left: 25%;
+}
+.bar[aria-valuenow="25"] .tooltip:before {
+  content: "25%";
+}
+.bar[aria-valuenow="25"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09328;
+  border-bottom: 1px solid #ee8711;
+}
+.bar[aria-valuenow="25"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09328;
+}
+
+.bar[aria-valuenow="26"] .tooltip {
+  left: 26%;
+}
+.bar[aria-valuenow="26"] .tooltip:before {
+  content: "26%";
+}
+.bar[aria-valuenow="26"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f09128;
+  border-bottom: 1px solid #ee8511;
+}
+.bar[aria-valuenow="26"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f09128;
+}
+
+.bar[aria-valuenow="27"] .tooltip {
+  left: 27%;
+}
+.bar[aria-valuenow="27"] .tooltip:before {
+  content: "27%";
+}
+.bar[aria-valuenow="27"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f08f29;
+  border-bottom: 1px solid #ee8311;
+}
+.bar[aria-valuenow="27"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f08f29;
+}
+
+.bar[aria-valuenow="28"] .tooltip {
+  left: 28%;
+}
+.bar[aria-valuenow="28"] .tooltip:before {
+  content: "28%";
+}
+.bar[aria-valuenow="28"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f08d2a;
+  border-bottom: 1px solid #ee8012;
+}
+.bar[aria-valuenow="28"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f08d2a;
+}
+
+.bar[aria-valuenow="29"] .tooltip {
+  left: 29%;
+}
+.bar[aria-valuenow="29"] .tooltip:before {
+  content: "29%";
+}
+.bar[aria-valuenow="29"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f08b2b;
+  border-bottom: 1px solid #ee7e13;
+}
+.bar[aria-valuenow="29"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f08b2b;
+}
+
+.bar[aria-valuenow="30"] .tooltip {
+  left: 30%;
+}
+.bar[aria-valuenow="30"] .tooltip:before {
+  content: "30%";
+}
+.bar[aria-valuenow="30"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #f0892c;
+  border-bottom: 1px solid #ee7c14;
+}
+.bar[aria-valuenow="30"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #f0892c;
+}
+
+.bar[aria-valuenow="31"] .tooltip {
+  left: 31%;
+}
+.bar[aria-valuenow="31"] .tooltip:before {
+  content: "31%";
+}
+.bar[aria-valuenow="31"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef872d;
+  border-bottom: 1px solid #ed7915;
+}
+.bar[aria-valuenow="31"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef872d;
+}
+
+.bar[aria-valuenow="32"] .tooltip {
+  left: 32%;
+}
+.bar[aria-valuenow="32"] .tooltip:before {
+  content: "32%";
+}
+.bar[aria-valuenow="32"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef852e;
+  border-bottom: 1px solid #ed7716;
+}
+.bar[aria-valuenow="32"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef852e;
+}
+
+.bar[aria-valuenow="33"] .tooltip {
+  left: 33%;
+}
+.bar[aria-valuenow="33"] .tooltip:before {
+  content: "33%";
+}
+.bar[aria-valuenow="33"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef832f;
+  border-bottom: 1px solid #ed7517;
+}
+.bar[aria-valuenow="33"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef832f;
+}
+
+.bar[aria-valuenow="34"] .tooltip {
+  left: 34%;
+}
+.bar[aria-valuenow="34"] .tooltip:before {
+  content: "34%";
+}
+.bar[aria-valuenow="34"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef8130;
+  border-bottom: 1px solid #ed7318;
+}
+.bar[aria-valuenow="34"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef8130;
+}
+
+.bar[aria-valuenow="35"] .tooltip {
+  left: 35%;
+}
+.bar[aria-valuenow="35"] .tooltip:before {
+  content: "35%";
+}
+.bar[aria-valuenow="35"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7f31;
+  border-bottom: 1px solid #ed7019;
+}
+.bar[aria-valuenow="35"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7f31;
+}
+
+.bar[aria-valuenow="36"] .tooltip {
+  left: 36%;
+}
+.bar[aria-valuenow="36"] .tooltip:before {
+  content: "36%";
+}
+.bar[aria-valuenow="36"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7d32;
+  border-bottom: 1px solid #ed6e1a;
+}
+.bar[aria-valuenow="36"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7d32;
+}
+
+.bar[aria-valuenow="37"] .tooltip {
+  left: 37%;
+}
+.bar[aria-valuenow="37"] .tooltip:before {
+  content: "37%";
+}
+.bar[aria-valuenow="37"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7b33;
+  border-bottom: 1px solid #ed6c1b;
+}
+.bar[aria-valuenow="37"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7b33;
+}
+
+.bar[aria-valuenow="38"] .tooltip {
+  left: 38%;
+}
+.bar[aria-valuenow="38"] .tooltip:before {
+  content: "38%";
+}
+.bar[aria-valuenow="38"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7a34;
+  border-bottom: 1px solid #ed6b1c;
+}
+.bar[aria-valuenow="38"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7a34;
+}
+
+.bar[aria-valuenow="39"] .tooltip {
+  left: 39%;
+}
+.bar[aria-valuenow="39"] .tooltip:before {
+  content: "39%";
+}
+.bar[aria-valuenow="39"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7835;
+  border-bottom: 1px solid #ed681d;
+}
+.bar[aria-valuenow="39"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7835;
+}
+
+.bar[aria-valuenow="40"] .tooltip {
+  left: 40%;
+}
+.bar[aria-valuenow="40"] .tooltip:before {
+  content: "40%";
+}
+.bar[aria-valuenow="40"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7636;
+  border-bottom: 1px solid #ed661e;
+}
+.bar[aria-valuenow="40"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7636;
+}
+
+.bar[aria-valuenow="41"] .tooltip {
+  left: 41%;
+}
+.bar[aria-valuenow="41"] .tooltip:before {
+  content: "41%";
+}
+.bar[aria-valuenow="41"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7437;
+  border-bottom: 1px solid #ed641f;
+}
+.bar[aria-valuenow="41"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7437;
+}
+
+.bar[aria-valuenow="42"] .tooltip {
+  left: 42%;
+}
+.bar[aria-valuenow="42"] .tooltip:before {
+  content: "42%";
+}
+.bar[aria-valuenow="42"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7238;
+  border-bottom: 1px solid #ed6120;
+}
+.bar[aria-valuenow="42"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7238;
+}
+
+.bar[aria-valuenow="43"] .tooltip {
+  left: 43%;
+}
+.bar[aria-valuenow="43"] .tooltip:before {
+  content: "43%";
+}
+.bar[aria-valuenow="43"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef7039;
+  border-bottom: 1px solid #ed5f21;
+}
+.bar[aria-valuenow="43"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef7039;
+}
+
+.bar[aria-valuenow="44"] .tooltip {
+  left: 44%;
+}
+.bar[aria-valuenow="44"] .tooltip:before {
+  content: "44%";
+}
+.bar[aria-valuenow="44"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef6e3a;
+  border-bottom: 1px solid #ed5d22;
+}
+.bar[aria-valuenow="44"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef6e3a;
+}
+
+.bar[aria-valuenow="45"] .tooltip {
+  left: 45%;
+}
+.bar[aria-valuenow="45"] .tooltip:before {
+  content: "45%";
+}
+.bar[aria-valuenow="45"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef6c3b;
+  border-bottom: 1px solid #ed5a23;
+}
+.bar[aria-valuenow="45"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef6c3b;
+}
+
+.bar[aria-valuenow="46"] .tooltip {
+  left: 46%;
+}
+.bar[aria-valuenow="46"] .tooltip:before {
+  content: "46%";
+}
+.bar[aria-valuenow="46"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef6a3c;
+  border-bottom: 1px solid #ed5824;
+}
+.bar[aria-valuenow="46"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef6a3c;
+}
+
+.bar[aria-valuenow="47"] .tooltip {
+  left: 47%;
+}
+.bar[aria-valuenow="47"] .tooltip:before {
+  content: "47%";
+}
+.bar[aria-valuenow="47"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef683d;
+  border-bottom: 1px solid #ed5625;
+}
+.bar[aria-valuenow="47"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef683d;
+}
+
+.bar[aria-valuenow="48"] .tooltip {
+  left: 48%;
+}
+.bar[aria-valuenow="48"] .tooltip:before {
+  content: "48%";
+}
+.bar[aria-valuenow="48"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef663e;
+  border-bottom: 1px solid #ed5326;
+}
+.bar[aria-valuenow="48"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef663e;
+}
+
+.bar[aria-valuenow="49"] .tooltip {
+  left: 49%;
+}
+.bar[aria-valuenow="49"] .tooltip:before {
+  content: "49%";
+}
+.bar[aria-valuenow="49"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef643f;
+  border-bottom: 1px solid #ed5127;
+}
+.bar[aria-valuenow="49"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef643f;
+}
+
+.bar[aria-valuenow="50"] .tooltip {
+  left: 50%;
+}
+.bar[aria-valuenow="50"] .tooltip:before {
+  content: "50%";
+}
+.bar[aria-valuenow="50"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ef6240;
+  border-bottom: 1px solid #ed4f28;
+}
+.bar[aria-valuenow="50"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ef6240;
+}
+
+.bar[aria-valuenow="51"] .tooltip {
+  left: 51%;
+}
+.bar[aria-valuenow="51"] .tooltip:before {
+  content: "51%";
+}
+.bar[aria-valuenow="51"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee6041;
+  border-bottom: 1px solid #ec4c2a;
+}
+.bar[aria-valuenow="51"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee6041;
+}
+
+.bar[aria-valuenow="52"] .tooltip {
+  left: 52%;
+}
+.bar[aria-valuenow="52"] .tooltip:before {
+  content: "52%";
+}
+.bar[aria-valuenow="52"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5e42;
+  border-bottom: 1px solid #ec4a2b;
+}
+.bar[aria-valuenow="52"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5e42;
+}
+
+.bar[aria-valuenow="53"] .tooltip {
+  left: 53%;
+}
+.bar[aria-valuenow="53"] .tooltip:before {
+  content: "53%";
+}
+.bar[aria-valuenow="53"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5c43;
+  border-bottom: 1px solid #ec482c;
+}
+.bar[aria-valuenow="53"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5c43;
+}
+
+.bar[aria-valuenow="54"] .tooltip {
+  left: 54%;
+}
+.bar[aria-valuenow="54"] .tooltip:before {
+  content: "54%";
+}
+.bar[aria-valuenow="54"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5a44;
+  border-bottom: 1px solid #ec452d;
+}
+.bar[aria-valuenow="54"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5a44;
+}
+
+.bar[aria-valuenow="55"] .tooltip {
+  left: 55%;
+}
+.bar[aria-valuenow="55"] .tooltip:before {
+  content: "55%";
+}
+.bar[aria-valuenow="55"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5845;
+  border-bottom: 1px solid #ec432e;
+}
+.bar[aria-valuenow="55"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5845;
+}
+
+.bar[aria-valuenow="56"] .tooltip {
+  left: 56%;
+}
+.bar[aria-valuenow="56"] .tooltip:before {
+  content: "56%";
+}
+.bar[aria-valuenow="56"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5646;
+  border-bottom: 1px solid #ec412f;
+}
+.bar[aria-valuenow="56"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5646;
+}
+
+.bar[aria-valuenow="57"] .tooltip {
+  left: 57%;
+}
+.bar[aria-valuenow="57"] .tooltip:before {
+  content: "57%";
+}
+.bar[aria-valuenow="57"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5447;
+  border-bottom: 1px solid #ec3e30;
+}
+.bar[aria-valuenow="57"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5447;
+}
+
+.bar[aria-valuenow="58"] .tooltip {
+  left: 58%;
+}
+.bar[aria-valuenow="58"] .tooltip:before {
+  content: "58%";
+}
+.bar[aria-valuenow="58"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5248;
+  border-bottom: 1px solid #ec3c31;
+}
+.bar[aria-valuenow="58"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5248;
+}
+
+.bar[aria-valuenow="59"] .tooltip {
+  left: 59%;
+}
+.bar[aria-valuenow="59"] .tooltip:before {
+  content: "59%";
+}
+.bar[aria-valuenow="59"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee5049;
+  border-bottom: 1px solid #ec3a32;
+}
+.bar[aria-valuenow="59"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee5049;
+}
+
+.bar[aria-valuenow="60"] .tooltip {
+  left: 60%;
+}
+.bar[aria-valuenow="60"] .tooltip:before {
+  content: "60%";
+}
+.bar[aria-valuenow="60"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee4e4a;
+  border-bottom: 1px solid #ec3733;
+}
+.bar[aria-valuenow="60"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee4e4a;
+}
+
+.bar[aria-valuenow="61"] .tooltip {
+  left: 61%;
+}
+.bar[aria-valuenow="61"] .tooltip:before {
+  content: "61%";
+}
+.bar[aria-valuenow="61"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee4c4b;
+  border-bottom: 1px solid #ec3534;
+}
+.bar[aria-valuenow="61"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee4c4b;
+}
+
+.bar[aria-valuenow="62"] .tooltip {
+  left: 62%;
+}
+.bar[aria-valuenow="62"] .tooltip:before {
+  content: "62%";
+}
+.bar[aria-valuenow="62"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee4a4c;
+  border-bottom: 1px solid #ec3335;
+}
+.bar[aria-valuenow="62"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee4a4c;
+}
+
+.bar[aria-valuenow="63"] .tooltip {
+  left: 63%;
+}
+.bar[aria-valuenow="63"] .tooltip:before {
+  content: "63%";
+}
+.bar[aria-valuenow="63"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee494d;
+  border-bottom: 1px solid #ec3236;
+}
+.bar[aria-valuenow="63"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee494d;
+}
+
+.bar[aria-valuenow="64"] .tooltip {
+  left: 64%;
+}
+.bar[aria-valuenow="64"] .tooltip:before {
+  content: "64%";
+}
+.bar[aria-valuenow="64"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee474e;
+  border-bottom: 1px solid #ec3038;
+}
+.bar[aria-valuenow="64"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee474e;
+}
+
+.bar[aria-valuenow="65"] .tooltip {
+  left: 65%;
+}
+.bar[aria-valuenow="65"] .tooltip:before {
+  content: "65%";
+}
+.bar[aria-valuenow="65"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee454f;
+  border-bottom: 1px solid #ec2e39;
+}
+.bar[aria-valuenow="65"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee454f;
+}
+
+.bar[aria-valuenow="66"] .tooltip {
+  left: 66%;
+}
+.bar[aria-valuenow="66"] .tooltip:before {
+  content: "66%";
+}
+.bar[aria-valuenow="66"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee4350;
+  border-bottom: 1px solid #ec2c3a;
+}
+.bar[aria-valuenow="66"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee4350;
+}
+
+.bar[aria-valuenow="67"] .tooltip {
+  left: 67%;
+}
+.bar[aria-valuenow="67"] .tooltip:before {
+  content: "67%";
+}
+.bar[aria-valuenow="67"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee4151;
+  border-bottom: 1px solid #ec2a3c;
+}
+.bar[aria-valuenow="67"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee4151;
+}
+
+.bar[aria-valuenow="68"] .tooltip {
+  left: 68%;
+}
+.bar[aria-valuenow="68"] .tooltip:before {
+  content: "68%";
+}
+.bar[aria-valuenow="68"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee3f52;
+  border-bottom: 1px solid #ec283d;
+}
+.bar[aria-valuenow="68"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee3f52;
+}
+
+.bar[aria-valuenow="69"] .tooltip {
+  left: 69%;
+}
+.bar[aria-valuenow="69"] .tooltip:before {
+  content: "69%";
+}
+.bar[aria-valuenow="69"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee3d53;
+  border-bottom: 1px solid #ec263e;
+}
+.bar[aria-valuenow="69"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee3d53;
+}
+
+.bar[aria-valuenow="70"] .tooltip {
+  left: 70%;
+}
+.bar[aria-valuenow="70"] .tooltip:before {
+  content: "70%";
+}
+.bar[aria-valuenow="70"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ee3b54;
+  border-bottom: 1px solid #ec2440;
+}
+.bar[aria-valuenow="70"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ee3b54;
+}
+
+.bar[aria-valuenow="71"] .tooltip {
+  left: 71%;
+}
+.bar[aria-valuenow="71"] .tooltip:before {
+  content: "71%";
+}
+.bar[aria-valuenow="71"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed3955;
+  border-bottom: 1px solid #eb2241;
+}
+.bar[aria-valuenow="71"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed3955;
+}
+
+.bar[aria-valuenow="72"] .tooltip {
+  left: 72%;
+}
+.bar[aria-valuenow="72"] .tooltip:before {
+  content: "72%";
+}
+.bar[aria-valuenow="72"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed3756;
+  border-bottom: 1px solid #eb2042;
+}
+.bar[aria-valuenow="72"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed3756;
+}
+
+.bar[aria-valuenow="73"] .tooltip {
+  left: 73%;
+}
+.bar[aria-valuenow="73"] .tooltip:before {
+  content: "73%";
+}
+.bar[aria-valuenow="73"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed3557;
+  border-bottom: 1px solid #eb1e44;
+}
+.bar[aria-valuenow="73"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed3557;
+}
+
+.bar[aria-valuenow="74"] .tooltip {
+  left: 74%;
+}
+.bar[aria-valuenow="74"] .tooltip:before {
+  content: "74%";
+}
+.bar[aria-valuenow="74"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed3358;
+  border-bottom: 1px solid #eb1c45;
+}
+.bar[aria-valuenow="74"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed3358;
+}
+
+.bar[aria-valuenow="75"] .tooltip {
+  left: 75%;
+}
+.bar[aria-valuenow="75"] .tooltip:before {
+  content: "75%";
+}
+.bar[aria-valuenow="75"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed3159;
+  border-bottom: 1px solid #eb1a46;
+}
+.bar[aria-valuenow="75"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed3159;
+}
+
+.bar[aria-valuenow="76"] .tooltip {
+  left: 76%;
+}
+.bar[aria-valuenow="76"] .tooltip:before {
+  content: "76%";
+}
+.bar[aria-valuenow="76"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed2f59;
+  border-bottom: 1px solid #eb1846;
+}
+.bar[aria-valuenow="76"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed2f59;
+}
+
+.bar[aria-valuenow="77"] .tooltip {
+  left: 77%;
+}
+.bar[aria-valuenow="77"] .tooltip:before {
+  content: "77%";
+}
+.bar[aria-valuenow="77"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed2d5a;
+  border-bottom: 1px solid #eb1648;
+}
+.bar[aria-valuenow="77"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed2d5a;
+}
+
+.bar[aria-valuenow="78"] .tooltip {
+  left: 78%;
+}
+.bar[aria-valuenow="78"] .tooltip:before {
+  content: "78%";
+}
+.bar[aria-valuenow="78"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed2b5b;
+  border-bottom: 1px solid #eb1449;
+}
+.bar[aria-valuenow="78"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed2b5b;
+}
+
+.bar[aria-valuenow="79"] .tooltip {
+  left: 79%;
+}
+.bar[aria-valuenow="79"] .tooltip:before {
+  content: "79%";
+}
+.bar[aria-valuenow="79"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed295c;
+  border-bottom: 1px solid #e9144b;
+}
+.bar[aria-valuenow="79"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed295c;
+}
+
+.bar[aria-valuenow="80"] .tooltip {
+  left: 80%;
+}
+.bar[aria-valuenow="80"] .tooltip:before {
+  content: "80%";
+}
+.bar[aria-valuenow="80"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed275d;
+  border-bottom: 1px solid #e7134d;
+}
+.bar[aria-valuenow="80"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed275d;
+}
+
+.bar[aria-valuenow="81"] .tooltip {
+  left: 81%;
+}
+.bar[aria-valuenow="81"] .tooltip:before {
+  content: "81%";
+}
+.bar[aria-valuenow="81"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed255e;
+  border-bottom: 1px solid #e6134f;
+}
+.bar[aria-valuenow="81"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed255e;
+}
+
+.bar[aria-valuenow="82"] .tooltip {
+  left: 82%;
+}
+.bar[aria-valuenow="82"] .tooltip:before {
+  content: "82%";
+}
+.bar[aria-valuenow="82"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed235f;
+  border-bottom: 1px solid #e41351;
+}
+.bar[aria-valuenow="82"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed235f;
+}
+
+.bar[aria-valuenow="83"] .tooltip {
+  left: 83%;
+}
+.bar[aria-valuenow="83"] .tooltip:before {
+  content: "83%";
+}
+.bar[aria-valuenow="83"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed2160;
+  border-bottom: 1px solid #e21253;
+}
+.bar[aria-valuenow="83"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed2160;
+}
+
+.bar[aria-valuenow="84"] .tooltip {
+  left: 84%;
+}
+.bar[aria-valuenow="84"] .tooltip:before {
+  content: "84%";
+}
+.bar[aria-valuenow="84"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1f61;
+  border-bottom: 1px solid #e01254;
+}
+.bar[aria-valuenow="84"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1f61;
+}
+
+.bar[aria-valuenow="85"] .tooltip {
+  left: 85%;
+}
+.bar[aria-valuenow="85"] .tooltip:before {
+  content: "85%";
+}
+.bar[aria-valuenow="85"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1d62;
+  border-bottom: 1px solid #df1256;
+}
+.bar[aria-valuenow="85"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1d62;
+}
+
+.bar[aria-valuenow="86"] .tooltip {
+  left: 86%;
+}
+.bar[aria-valuenow="86"] .tooltip:before {
+  content: "86%";
+}
+.bar[aria-valuenow="86"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1b63;
+  border-bottom: 1px solid #dd1157;
+}
+.bar[aria-valuenow="86"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1b63;
+}
+
+.bar[aria-valuenow="87"] .tooltip {
+  left: 87%;
+}
+.bar[aria-valuenow="87"] .tooltip:before {
+  content: "87%";
+}
+.bar[aria-valuenow="87"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1964;
+  border-bottom: 1px solid #db1159;
+}
+.bar[aria-valuenow="87"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1964;
+}
+
+.bar[aria-valuenow="88"] .tooltip {
+  left: 88%;
+}
+.bar[aria-valuenow="88"] .tooltip:before {
+  content: "88%";
+}
+.bar[aria-valuenow="88"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1865;
+  border-bottom: 1px solid #da115a;
+}
+.bar[aria-valuenow="88"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1865;
+}
+
+.bar[aria-valuenow="89"] .tooltip {
+  left: 89%;
+}
+.bar[aria-valuenow="89"] .tooltip:before {
+  content: "89%";
+}
+.bar[aria-valuenow="89"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1666;
+  border-bottom: 1px solid #d9115b;
+}
+.bar[aria-valuenow="89"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1666;
+}
+
+.bar[aria-valuenow="90"] .tooltip {
+  left: 90%;
+}
+.bar[aria-valuenow="90"] .tooltip:before {
+  content: "90%";
+}
+.bar[aria-valuenow="90"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ed1467;
+  border-bottom: 1px solid #d7105c;
+}
+.bar[aria-valuenow="90"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ed1467;
+}
+
+.bar[aria-valuenow="91"] .tooltip {
+  left: 91%;
+}
+.bar[aria-valuenow="91"] .tooltip:before {
+  content: "91%";
+}
+.bar[aria-valuenow="91"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec1268;
+  border-bottom: 1px solid #d4105e;
+}
+.bar[aria-valuenow="91"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec1268;
+}
+
+.bar[aria-valuenow="92"] .tooltip {
+  left: 92%;
+}
+.bar[aria-valuenow="92"] .tooltip:before {
+  content: "92%";
+}
+.bar[aria-valuenow="92"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec1069;
+  border-bottom: 1px solid #d40e5e;
+}
+.bar[aria-valuenow="92"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec1069;
+}
+
+.bar[aria-valuenow="93"] .tooltip {
+  left: 93%;
+}
+.bar[aria-valuenow="93"] .tooltip:before {
+  content: "93%";
+}
+.bar[aria-valuenow="93"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec0e6a;
+  border-bottom: 1px solid #d40d5f;
+}
+.bar[aria-valuenow="93"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec0e6a;
+}
+
+.bar[aria-valuenow="94"] .tooltip {
+  left: 94%;
+}
+.bar[aria-valuenow="94"] .tooltip:before {
+  content: "94%";
+}
+.bar[aria-valuenow="94"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec0c6b;
+  border-bottom: 1px solid #d40b60;
+}
+.bar[aria-valuenow="94"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec0c6b;
+}
+
+.bar[aria-valuenow="95"] .tooltip {
+  left: 95%;
+}
+.bar[aria-valuenow="95"] .tooltip:before {
+  content: "95%";
+}
+.bar[aria-valuenow="95"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec0a6c;
+  border-bottom: 1px solid #d40961;
+}
+.bar[aria-valuenow="95"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec0a6c;
+}
+
+.bar[aria-valuenow="96"] .tooltip {
+  left: 96%;
+}
+.bar[aria-valuenow="96"] .tooltip:before {
+  content: "96%";
+}
+.bar[aria-valuenow="96"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec086d;
+  border-bottom: 1px solid #d30762;
+}
+.bar[aria-valuenow="96"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec086d;
+}
+
+.bar[aria-valuenow="97"] .tooltip {
+  left: 97%;
+}
+.bar[aria-valuenow="97"] .tooltip:before {
+  content: "97%";
+}
+.bar[aria-valuenow="97"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec066e;
+  border-bottom: 1px solid #d30562;
+}
+.bar[aria-valuenow="97"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec066e;
+}
+
+.bar[aria-valuenow="98"] .tooltip {
+  left: 98%;
+}
+.bar[aria-valuenow="98"] .tooltip:before {
+  content: "98%";
+}
+.bar[aria-valuenow="98"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec046f;
+  border-bottom: 1px solid #d30463;
+}
+.bar[aria-valuenow="98"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec046f;
+}
+
+.bar[aria-valuenow="99"] .tooltip {
+  left: 99%;
+}
+.bar[aria-valuenow="99"] .tooltip:before {
+  content: "99%";
+}
+.bar[aria-valuenow="99"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec0270;
+  border-bottom: 1px solid #d30264;
+}
+.bar[aria-valuenow="99"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec0270;
+}
+
+.bar[aria-valuenow="100"] .tooltip {
+  left: 100%;
+}
+.bar[aria-valuenow="100"] .tooltip:before {
+  content: "100%";
+}
+.bar[aria-valuenow="100"].heat-gradient .heat-gradient-tooltip {
+  /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+  background-color: #ec0071;
+  border-bottom: 1px solid #d30065;
+}
+.bar[aria-valuenow="100"].heat-gradient .heat-gradient-tooltip:after {
+  border-bottom-color: #ec0071;
+}

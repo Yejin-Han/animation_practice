@@ -1,0 +1,280 @@
+/***************** settings *****************/
+@charset "utf-8";
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+$factor-size: 5;
+
+$dark: #444;
+$gray: #999;
+$light-gray: #e0e0e0;
+$white: #fefefe;
+$red: #ec0071;
+$yellow: #f1c40f;
+$orange: #ff6900;
+$cyan: #57caf4;
+$navy: #0a4069;
+
+$faces-color: rgba(white, .3);
+$border-color: rgba(white, 1);
+
+$rangeTrack-border-color: $navy;
+$rangeThumb-border-color: $navy;
+
+$thumbSize: 1em;
+
+$sides-transition: 0.5s;
+$sides-transition-duration: $sides-transition;
+
+
+/***************** normalize *****************/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary { display: block; } 
+audio,canvas,video { display: inline-block; } 
+audio:not([controls]) { display: none; height: 0; } 
+[hidden] { display: none; } 
+html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; } 
+body { margin: 0; } 
+a:focus { outline: thin dotted; } 
+a:active,a:hover { outline: 0; } 
+h1 { font-size: 2em; margin: 0.67em 0; } 
+abbr[title] { border-bottom: 1px dotted; } 
+b,strong { font-weight: bold; } 
+dfn { font-style: italic; } 
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; } 
+mark { background: #ff0; color: #000; } 
+code,kbd,pre,samp { font-family: monospace,serif; font-size: 1em; } 
+pre { white-space: pre-wrap; } 
+q { quotes: "\201C" "\201D" "\2018" "\2019"; } 
+small { font-size: 80%; } 
+sub,sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } 
+sup { top: -0.5em; } 
+sub { bottom: -0.25em; } 
+img { border: 0; } 
+svg:not(:root) { overflow: hidden; } 
+figure { margin: 0; } 
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; } 
+legend { border: 0; padding: 0; } 
+button,input,select,textarea { font-family: inherit; font-size: 100%; margin: 0; } 
+button,input { line-height: normal; } 
+button,select { text-transform: none; } 
+button,html input[type="button"],input[type="reset"],input[type="submit"] { -webkit-appearance: button; cursor: pointer; } 
+button[disabled],html input[disabled] { cursor: default; } 
+input[type="checkbox"],input[type="radio"] { box-sizing: border-box; padding: 0; } 
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; } 
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; } 
+button::-moz-focus-inner,input::-moz-focus-inner { border: 0; padding: 0; } 
+textarea { overflow: auto; vertical-align: top; } 
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/***************** contents *****************/
+*, *:after, *:before { box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body { font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif; background: #e5e8ef; color: #444; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { outline: none; text-decoration: none; color: #df7932; }
+a:hover, a:focus { color: #333; }
+.hidden { position: absolute; overflow: hidden; width: 0; height: 0; pointer-events: none; }
+
+/* Header */
+.codrops-header {
+    padding: 2em 1em 4em; text-align: center;
+
+    h1 {
+        margin: 0.5em 0 0; letter-spacing: -1px; font-size: 3em; line-height: 1;
+
+        span {
+            display: block; padding: 2em 0 0; color: #bbbfcb; font-size: 0.285em; letter-spacing: 3px; text-transform: uppercase;
+        }
+    }
+}
+@media screen and (max-width: 50em) {
+    .codrops-header { padding: 3em 10% 4em; }
+}
+@media screen and (max-width: 40em) {
+    .codrops-header h1 { font-size: 2.8em; }
+}
+
+/* Top Navigation */
+.codrops-links {
+    position: relative; display: inline-block; text-align: center; white-space: nowrap;
+    
+    &:after {
+        content: ''; position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background: rgba(0, 0, 0, 0.1); transform: rotate3d(0, 0, 1, 22.5deg); /* 가운데 / 모양 */
+    }
+}
+.codrops-icon {
+    display: inline-block; width: 1.5em; margin: 0.5em; padding: 0em 0;
+
+    span { display: none; }
+
+    &:before {
+        margin: 0 5px; text-transform: none; font-weight: normal; font-style: normal; font-variant: normal; font-family: 'codropsicons'; line-height: 1; -webkit-font-smoothing: antialised;
+    }
+
+    &.codrops-icon--drop:before { content: '\e001'; }
+    &.codrops-icon--prev:before { content: '\e004'; }
+}
+
+
+/***************** component *****************/
+.progress-factor { flex: 0 1 100%; padding: 1em 0.2em 0; font-size: $factor-size + em; }
+.progress-bar { width: 100%; height: 1em; font-size: 1em; text-align: center; perspective: 12em; perspective-origin: 50% 50%; }
+.bar {
+    position: relative; display: inline-block; width: 4em; height: 1em; font-size: 1em; transform-style: preserve-3d; transition: all $sides-transition-duration ease-in-out;
+
+    &.has-rotation { transform: rotateX(60deg); }
+}
+.bar-face {
+    position: absolute; display: inline-block; left: 0; bottom: 0; box-sizing: border-box; width: 100%; height: 100%; background-color: rgba($navy, 0.3); backface-visibility: visible; transition: transform $sides-transition-duration ease-out;
+
+    &.face-position { transform-origin: 50% 100%; }
+    &.roof { transform: translateZ(1em); transition-delay: $sides-transition-duration * 4; }
+    &.back { transform: rotateX(-90deg) translateZ(-1em); transition-delay: $sides-transition-duration * 2; }
+    &.left { width: 1em; transform: rotateX(-90deg) rotateY(-90deg) translateX(-0.5em) translateZ(0.5em); transition-delay: $sides-transition-duration * 3; }
+    &.right { width: 1em; left: auto; right: 0; transform: rotateX(-90deg) rotateY(90deg) translateX(0.5em) translateZ(0.5em); transition-delay: $sides-transition-duration; }
+    &.front { transform: rotateX(-90deg); }
+    &.percentage:before { content: ''; display: block; position: absolute; bottom: 0; width: 0; height: 100%; margin: 0; box-sizing: border-box; line-height: 4em; font-size: 0.25em; color: rgba($dark, 0.8); transition: all $sides-transition-duration ease-out; }
+}
+
+@mixin build-skin($color, $name) {
+    .#{$name} {  /* # { } (sass 컴파일 시 에러나서 띄어쓰기 한다.)이 기존 `${}`같은 보간법이다. */
+        .left, &[aria-valuenow='100'] .right { background-color: rgba($color, 0.2); }
+        .percentage:before { background-color: rgba($color, 0.5); }
+        .volume-lights.shine:before { box-shadow: 0 1.6em 3em rgba($color, 0.25); }
+
+        &:not(.has-colors) {
+            &[aria-valuenow] .face-position { background-color: rgba($dark, 0.6); }
+            .percentage:before { background-color: transparent; }
+            .volume-lights.shine:before { box-shadow: 0 1.6em 3em rgba($color, 0); }
+        }
+    }
+}
+
+.bar-face, .bar[aria-valuenow='0'] .right { background-color: $faces-color; }
+.bar[aria-valuenow='0'] .right { transition-delay: $sides-transition-duration; }
+.bar .floor.volume-lights { box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba($white, 0.6); }
+
+.dots-pattern .percentage:before { background: radial-gradient(rgba(254, 254, 254, 0.5) 10%, rgba(0, 0, 0, 0) 5%) 0 0, radial-gradient(rgba(254, 254, 254, 0.5) 10%, rgba(0, 0, 0, 0) 5%) 0.5em 0.5em; background-size: 1em 1em; }
+
+@include build-skin($navy, 'navy');
+@include build-skin($orange, 'orange');
+@include build-skin($cyan, 'cyan');
+@include build-skin($red, 'red');
+@include build-skin($dark, 'dark');
+@include build-skin($yellow, 'yellow');
+
+@for $i from 1 to 101 {
+    [aria-valuenow='#{$i}'] {
+        .percentage:before { width: $i * 1%; }
+    }
+}
+
+
+/***************** custom bars *****************/
+@mixin set-gradient-step($value1, $value2, $percent) {
+    $color-result: mix($value2, $value1, $percent * 1%); /* 두 색을 $percent : 100 - $percent의 비율로 섞어줌! */
+    
+    background-color: $color-result;
+    border-bottom: 1px solid darken($color-result, 5%);
+
+    &:after { border-bottom-color: $color-result; }
+}
+
+.flexy-grid {
+    display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 4em 0;
+
+    .flexy-column { display: flex; flex: 1; justify-content: center; margin-bottom: 3em; }
+
+    &:nth-of-type(odd) { background-color: #d8dbe4; }
+
+    input[type="checkbox"] { display: none; }
+}
+.flexy-item { flex: 1; }
+.value-label {
+    position: relative; display: inline-block; margin: 4em 0 2.5em; padding: 1em; background-color: rgba($orange, 0.6); color: $white; border: 1px solid rgba($gray, 0.2); border-radius: 0.25em; box-shadow: 0 0.1em 0.25em rgba($gray, 0.6), inset 0 0.15em 0.05em rgba($white, 0.2);
+
+    &:hover { cursor: pointer; }
+}
+
+input[type="checkbox"]:checked ~ .value-label { background: $dark; box-shadow: none; }
+input[type="checkbox"]:checked ~ .flexy-column .bar[aria-valuenow] {
+    .percentage:before { width: 90%; }
+
+    .tooltip {
+        left: 90%;
+
+        &:before { content: '90%'; }
+    }
+
+    &.heat-gradient {
+        .tooltip {
+            background-color: $red; border-bottom: 1px solid darken($red, 5%);
+        
+            &:after { border-bottom-color: $red; }
+        }
+    }
+}
+
+.bar.ruler .percentage:before { background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, rgba(0, 0, 0, 0) 1px); background-size: 1em 1em, 1.6em 2em, 0.8em 2em; }
+.bar.ruler-2 .percentage:before { background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.14) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.26) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.34) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.38) 0.8em, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0.8em, rgba(0, 0, 0, 0) 1px); background-size: 16em 1em; background-position: 1.6em 0, 3.2em 0, 4.8em 0, 6.4em 0, 8em 0, 9.6em 0, 11.2em 0, 12.8em 0, 14.4em 0; }
+.bar.ruler-3 .percentage:before { background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.8em, rgba(0, 0, 0, 0) 1px); background-size: 1.6em 2em; }
+
+.bar.heat-gradient {
+    $color1: rgba($yellow, 0.8);
+    $color2: rgba($red, 0.6);
+
+    .left { background-color: $color1; }
+
+    .percentage:before { background-color: $color1; background: linear-gradient(to right, $color1 0%, $color2 100%); background-size: 16em; }
+
+    .volume-lights.shine:before { box-shadow: -2em 1.6em 3em -1em rgba($color1, 0.3), 2em 1.6em 3em -1em rgba($color2, 0.6); }
+
+    &[aria-valuenow='100'] .right { background-color: $color2; }
+}
+
+.bar.move .bar-face.floor { transition: all 0.5s ease-in-out; }
+.bar.move:hover {
+    transform: rotateX(60deg) translateZ(0.1em);
+
+    .bar-face.floor.volume-lights { box-shadow: 0 -0.1em 1em rgba(0, 0, 0, 0.15), 0 0.35em 0.2em -8px rgba(0, 0, 0, 0.15), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6); }
+}
+
+.tooltip {
+    $color: lighten($red, 25%);
+
+    display: inline-block; position: absolute; left: 0; width: 1em; height: 1em; line-height: 1em; background-color: $color; color: $white; margin: 1.85em 0 0 -0.5em; font-weight: bold; font-size: 0.65em; border-bottom: 1px solid darken($color, 5%); box-shadow: 0 0.05em 0.1em -0.02em rgba(0, 0, 0, 0.4), 0 0.1em 0.6em rgba(0, 0, 0, 0.3); transition: all $sides-transition-duration ease-out;
+
+    &:after, &:before { display: inline-block; position: absolute; left: 0; top: 0; width: 100%; font-size: 0.25em; }
+
+    &:after { content: ''; width: 0; height: 0; border: 1em solid transparent; border-bottom-color: $color; border-top-width: 0; margin: -0.75em 0 0 1em; transition: all $sides-transition-duration ease-out; }
+
+    &:before { height: 100%; text-align: center; }
+
+    &.white {
+        background-color: $white; border-bottom: 1px solid darken($white, 10%); color: $dark; box-shadow: 0 0.08em 0.1em 0em rgba(0, 0, 0, 0.2), 0 0.1em 1.6em rgba(0, 0, 0, 0.2);
+
+        &:after { border-bottom-color: $white; }
+    }
+}
+
+@for $i from 1 to 101 {
+    .bar[aria-valuenow='#{$i}'] {
+        .tooltip {
+            left: $i * 1%;
+
+            &:before { content: '#{$i}%'; }
+        }
+        
+        &.heat-gradient .heat-gradient-tooltip { @include set-gradient-step($yellow, $red, $i); }
+    }
+}
